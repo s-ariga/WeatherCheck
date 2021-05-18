@@ -3,4 +3,5 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
---path:"../src"
+#--path:"../src"
+switch("path", "../src")

@@ -14,6 +14,7 @@ let
 proc timeString():string =
   ## 現在の時間をstringで返す。ファイル名に使うため
   let timeNow = now()
+  # ファイル名に":"を入れたら失敗したので、全部"-"
   return timeNow.format("yyyy-MM-dd-HH-mm")
 
 proc httpGetChart(): string =

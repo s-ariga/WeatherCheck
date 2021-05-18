@@ -3,6 +3,11 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
-import weathercheck/tenkijp
+version     = "0.0.1"
+author      = "Seiichi Ariga"
+description = "HTTP get weather images."
+license     = "MIT"
 
-getTenkiData()
+srcDir = "src"
+
+requires "nim >= 1.4.6"
