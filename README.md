@@ -11,5 +11,5 @@
 
 ## 使うサイト・API
 
--[x] tenki.jp
--[ ] OpenWeather
+- [x] tenki.jp
+- [x] OpenWeather
