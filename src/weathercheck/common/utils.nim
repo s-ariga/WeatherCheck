@@ -7,6 +7,6 @@ import times
 
 proc timeString*(): string =
   ## 時間を文字列で返す。
-  ## TODO 秒まで必要？
+  ## TODO 秒まで必要？っぽいので入れた
   let timeNow = now()
-  return timeNow.format("yyyy-MMdd-HH-mm")
+  return timeNow.format("yyyy-MMdd-HH-mm-ss")
