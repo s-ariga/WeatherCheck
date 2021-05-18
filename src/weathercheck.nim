@@ -4,5 +4,7 @@
 # https://opensource.org/licenses/MIT
 
 import weathercheck/tenkijp
+import weathercheck/openweather
 
 getTenkiData()
+getOpenWeatherData()

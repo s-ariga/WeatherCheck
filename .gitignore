@@ -51,6 +51,9 @@ $RECYCLE.BIN/
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
+# APIキー等、定数置き場
+weathercheck/common/private.nim
+
 # ignore nim compiler outputs
 *.exe
 nimcache
@@ -58,4 +61,5 @@ nimcache
 *.ilk
 
 # ダウンロードした画像と気象データは除く
-*.jpg 
+*.jpg
+*.txt

@@ -5,17 +5,11 @@
 
 ## Tenki.jpから天気図画像をダウンロードするモジュール
 
-import httpclient, times
+import httpclient
+import common/utils
 
 let
   IMAGE_URL = "http://static.tenki.jp/static-images/radar/recent/japan-detail-middle.jpg" ## Tenki.jpのトップ右下に出てくる天気図のURL
-
-
-proc timeString():string =
-  ## 現在の時間をstringで返す。ファイル名に使うため
-  let timeNow = now()
-  # ファイル名に":"を入れたら失敗したので、全部"-"
-  return timeNow.format("yyyy-MM-dd-HH-mm")
 
 proc httpGetChart(): string =
   ## ダウンロードの実行。画像データを返す
