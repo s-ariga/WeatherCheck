@@ -9,5 +9,6 @@ description = "HTTP get weather images."
 license     = "MIT"
 
 srcDir = "src"
+bin = @["weathercheck"]
 
 requires "nim >= 1.4.6"

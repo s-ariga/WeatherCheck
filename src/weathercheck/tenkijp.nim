@@ -5,12 +5,14 @@
 
 ## Tenki.jpから天気図画像をダウンロードするモジュール
 
+
 import httpclient
 import common/utils
 
 const
   IMAGE_URL = "http://static.tenki.jp/static-images/radar/recent/japan-detail-middle.jpg" ## Tenki.jpのトップ右下に出てくる天気図のURL
-
+  PRESSURE_URL = "https://static.tenki.jp/static-images/chart/recent/middle.jpg"
+  
 proc httpGetChart(): string =
   ## ダウンロードの実行。画像データを返す
   ## "" はエラーの場合
