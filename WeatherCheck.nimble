@@ -1,11 +1,8 @@
 # Copyright (c) 2021 Seiichi Ariga <seiichi.ariga@gmail.com>
-# 
-# This software is released under the MIT License.
-# https://opensource.org/licenses/MIT
 
 version     = "0.0.1"
 author      = "Seiichi Ariga"
-description = "HTTP get weather images."
+description = "HTTP get weather images from Tenki.jp. Json data from OpenWeather"
 license     = "MIT"
 
 srcDir = "src"
