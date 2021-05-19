@@ -8,20 +8,28 @@
 import httpclient
 import common/utils
 
-let
+const
   IMAGE_URL = "http://static.tenki.jp/static-images/radar/recent/japan-detail-middle.jpg" ## Tenki.jpのトップ右下に出てくる天気図のURL
 
 proc httpGetChart(): string =
   ## ダウンロードの実行。画像データを返す
+  ## "" はエラーの場合
+  
   let client = newHttpClient()
-  return client.getContent(IMAGE_URL)
+  let res = try: client.getContent(IMAGE_URL)
+            except: ""
+  return res
 
 proc getTenkiData*() =
   ## Tenki.jpから画像をダウンロードして保存
   let data = httpGetChart()
   # 画像データそのままなので、そのままファイルに保存
-  let filename = "tenkijp-chart-" & timeString() & ".jpg"
-  echo "output file: ", filename
-  writeFile(filename, data)
+  if data != "":
+    let filename = "tenkijp-chart-" & timeString() & ".jpg"
+    echo "output file: ", filename
+    try: 
+      writeFile(filename, data)
+    except IOError:
+      echo("IO Error")
 
 

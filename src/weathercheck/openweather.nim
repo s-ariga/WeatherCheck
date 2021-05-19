@@ -8,13 +8,22 @@ import common/private
 let API_KEY = OPEN_WEATHER_API_KEY
 
 proc httpGetWeather(): string =
+  ## OpenWeather API からデータを取得
+  ## Errorの場合""を返す
+  
   let client = newHttpClient()
   let request = "http://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=" & API_KEY
-  return client.getContent(request)
+  let res = try: client.getContent(request)
+            except: ""
+  return res
 
 proc getOpenWeatherData*() =
   let data = httpGetWeather()
 
-  let filename = "openweather-" & timeString() & ".txt"
-  echo "output file: ", filename
-  writeFile(filename, data)
+  if data != "":
+    let filename = "openweather-" & timeString() & ".txt"
+    echo "output file: ", filename
+    try:
+      writeFile(filename, data)
+    except IOError:
+      echo("IO error")
